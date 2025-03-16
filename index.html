@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слова поддержки</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'Comfortaa', sans-serif;
+            color: #ffffff;
+            background: #111;
+            animation: glowEffect 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes glowEffect {
+            0% { background-color: #0a0a0a; box-shadow: 0 0 10px #222; }
+            50% { background-color: #191919; box-shadow: 0 0 20px #333; }
+            100% { background-color: #0f0f0f; box-shadow: 0 0 10px #222; }
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            color: #ffcc00;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 2.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .highlight {
+            color: #ff6666;
+            font-weight: bold;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #88c0d0;
+        }
+
+        .music-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1em;
+            background: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .music-button:hover {
+            background: #ff9900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Когда тебе плохо...</h1>
+        <p><span class="highlight">Ты важен.</span> Даже если кажется, что нет.</p>
+        <p><span class="highlight">Ты силен.</span> Ты уже справлялся, справишься и сейчас.</p>
+        <p class="quote">«Тьма не вечна. Свет всегда найдёт дорогу.»</p>
+        <p>Ты не один. Мир больше, чем кажется.</p>
+        <p>Помни: <span class="highlight">тебе есть за что жить.</span></p>
+        <button class="music-button" onclick="playMusic()">▶ Включить музыку</button>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="https://s3.deliciouspeaches.com/get/music/20191120/Nervy_-_Slishkom_vlyubljon_67355910.mp3">
+    </audio>
+
+    <script>
+        function playMusic() {
+            let audio = document.getElementById("background-music");
+            audio.volume = 0.2; // Тихая громкость
+            audio.play().catch(error => console.log("Ошибка воспроизведения:", error));
+        }
+    </script>
+</body>
+</html>
